@@ -8,6 +8,13 @@ TagManager:
   - Water
   - Floor
   - Bottle
+  - trap
+  - Trap
+  - Purified water
+  - Empty
+  - Cold
+  - ICE
+  - Cap
   layers:
   - Default
   - TransparentFX
