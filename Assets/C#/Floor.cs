@@ -38,7 +38,7 @@ public class Floor : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Bottle"))
+        if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Bottle") || collision.collider.CompareTag("ICE"))
         {
             if (trackedObjects.Contains(collision.gameObject))
             {
@@ -57,7 +57,7 @@ public class Floor : MonoBehaviour
 
 void CheckPosition(Collision2D collision)
 {
-    if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Bottle"))
+    if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Bottle") || collision.collider.CompareTag("ICE"))
     {
         foreach (ContactPoint2D contact in collision.contacts)
         {
@@ -141,6 +141,12 @@ void CheckPosition(Collision2D collision)
         if (bottle != null)
         {
             mass += bottle.CurrentMass;
+        }
+
+        Ice ice = obj.GetComponent<Ice>();
+        if(ice != null)
+        {
+            mass += ice.currentMass;
         }
 
         // 递归地检查所有子物体

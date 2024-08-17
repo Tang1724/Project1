@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Ice : MonoBehaviour
 {
- // 当冰块与其他碰撞器碰撞时调用此方法
+    public float currentMass = 1f; // 你可以根据需要使用这个变量
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 检查碰撞的对象是否具有标签 "EMPTY"
+        // 检查碰撞的对象是否具有标签 "Empty"
         if (collision.gameObject.tag == "Empty")
         {
-            GetComponent<Collider2D>().enabled = false;
-            // 如果是，销毁这个冰块对象
-            Destroy(gameObject);
+            StartCoroutine(DisableAndDestroy()); // 启动协程处理延迟销毁
         }
+    }
+
+    IEnumerator DisableAndDestroy()
+    {
+        // GetComponent<Collider2D>().enabled = false; // 禁用碰撞器
+        yield return new WaitForSeconds(3); // 等待三秒
+        Destroy(gameObject); // 销毁对象
     }
 }

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class PlayerState : MonoBehaviour
 {
@@ -93,19 +92,8 @@ public class PlayerState : MonoBehaviour
     // 使用计算后的位置生成冰块
     Instantiate(iceBlockPrefab, spawnPosition, Quaternion.identity);
     }
-
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Cap"))
-        {
-            Cap = true;}
-        }
-
     void OnTriggerStay2D(Collider2D collider)
     {   
-        if(Cap == false && CapChange ==false)
-        {
             if (collider.gameObject.tag == "Water")
             {
                 Debug.Log("[PlayerState] Touched water. Attempting to change state to Full.");
@@ -129,35 +117,7 @@ public class PlayerState : MonoBehaviour
                 IceBlock = true;
 
             }
-        }
-        if(Cap == true && CapChange == false){
-            if (collider.gameObject.tag == "Water")
-            {
-                Debug.Log("[PlayerState] Touched water. Attempting to change state to Full.");
-                ChangeState(State.Full);
-                playerMoveControl.StartFly = false;
-                CapChange = true;
-            }
-            
-            if (collider.gameObject.tag == "Purified water"){
-                ChangeState(State.Fly);
-                CapChange = true;
-            }
-            
-            if(collider.gameObject.tag == "Empty"){
-                Debug.Log("[PlayerState] Touched water. Attempting to change state to Full.");
-                ChangeState(State.Empty);
-                CapChange = true;
-                playerMoveControl.StartFly = false;
-            }
-
-            if(collider.gameObject.tag == "Cold"){
-                IceBlock = true;
-                CapChange = true;
-            }
-        }
-            
-}      
+        }  
     
 
     void OnTriggerExit2D(Collider2D other)

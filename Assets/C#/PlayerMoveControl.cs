@@ -39,6 +39,16 @@ public class PlayerMoveControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+          if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            LoadPreviousLevel();
+        }
+
+        // 按键2转移到下一关
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            LoadNextLevel();
+        }
         if(Input.GetButtonDown("Jump") && isGrounded){
             jumpPressed = true; 
         }
@@ -213,5 +223,28 @@ public class PlayerMoveControl : MonoBehaviour
         Gizmos.DrawLine(start3, end3);
     }
 }
+
+ private void LoadPreviousLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int previousSceneIndex = Mathf.Max(currentSceneIndex - 1, 0); // 确保索引不会小于0
+        SceneManager.LoadScene(previousSceneIndex);
+    }
+
+    // 转移到下一关
+    private void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // 确保索引不会超出已有的关卡数
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("已经是最后一关了！");
+        }
+    }
 
 }
