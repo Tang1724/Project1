@@ -12,8 +12,8 @@ public class PlayerMoveControl : MonoBehaviour
     private Animator anim;
     private Bottle bottle;
     public float fullspeed = 4f;
-    public float emptyspeed = 7f; 
-    public float flyspeed = 8f;
+    public float emptyspeed = 6f; 
+    public float flyspeed = 6f;
     public float jumpFullForce = 5f;
     public float jumpEmptyForce = 8f;
     public float FlyForce = 5f;

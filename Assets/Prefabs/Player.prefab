@@ -176,8 +176,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 1
   iceBlockPrefab: {fileID: 5019642967083875698, guid: cbde1d19f930b7b4fb42c4433f355674, type: 3}
-  spawnDistance: 0.8
+  spawnDistance: 0.2
   IceBlock: 0
+  cooldown: 0.75
+  flydown: 1.5
+  isWithinWater: 0
 --- !u!114 &730228957478921625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullspeed: 4
   emptyspeed: 6
-  flyspeed: 8
+  flyspeed: 6
   jumpFullForce: 11.5
   jumpEmptyForce: 18.5
   FlyForce: 5

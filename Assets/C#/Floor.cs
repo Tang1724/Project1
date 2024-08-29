@@ -165,8 +165,8 @@ void CheckPosition(Collision2D collision)
 
         // 计算平台的顶部和左右边界
         float platformTop = transform.position.y + (transform.localScale.y * 0.5f);
-        float platformLeft = transform.position.x - (transform.localScale.x * 0.47f);
-        float platformRight = transform.position.x + (transform.localScale.x * 0.47f);
+        float platformLeft = transform.position.x - (transform.localScale.x * 0.49f);
+        float platformRight = transform.position.x + (transform.localScale.x * 0.49f);
 
         // 计算平台顶部的宽度
         float width = platformRight - platformLeft;
