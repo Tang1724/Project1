@@ -16,6 +16,7 @@ TagManager:
   - ICE
   - Cap
   - water1
+  - End
   layers:
   - Default
   - TransparentFX

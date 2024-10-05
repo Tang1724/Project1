@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -913,47 +918,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      foreground-vegetation-4: -938805887
-      platform-diagonal-left: 234114533
-      foreground-vegetation-1: 2065275662
-      right-bridge: 94019352
-      rock-diagonal-left: 1677274913
-      platform-diagonal-right-plants: 897671598
-      top-layer_7: -756734255
-      rock-diagonal-left-plants: 518180721
-      top-layer_2: -1472322122
-      top-layer_5: 458761661
-      rock-diagonal-left-2: 408455052
-      left-bridge: -1493454941
-      solid: -631661639
-      platform-diagonal-right: -910176089
-      rock-diagonal-right-plants: 1251562768
-      platform-diagonal-left-plants: -1715798420
-      foreground-vegetation-2: 738675452
-      top-layer_1: -1720707100
-      left-edge: -1817342545
-      rock-diagonal-right: 885058728
       -2: 179147487
-      top-layer_6: -1743447260
-      top-layer_0: 1007335403
-      foreground-vegetation-3: 1032049197
-      top-layer_3: 1703407973
+      bridge: -38013908
+      bridge-log: -2119691025
       bridge-log-2: -1170604191
-      right-rock-bridge: 2066175473
+      foreground-vegetation-1: 2065275662
+      foreground-vegetation-2: 738675452
+      foreground-vegetation-3: 1032049197
+      foreground-vegetation-4: -938805887
+      left: 48717042
+      left-bridge: -1493454941
+      left-edge: -1817342545
+      left-rock-bridge: -1436200859
+      platform-diagonal-left: 234114533
+      platform-diagonal-left-plants: -1715798420
+      platform-diagonal-right: -910176089
+      platform-diagonal-right-plants: 897671598
       right: 2145907313
-      wall-pattern-big: -449134481
+      right-bridge: 94019352
+      right-edge: 343665818
+      right-rock-bridge: 2066175473
+      rock-diagonal-left: 1677274913
+      rock-diagonal-left-2: 408455052
+      rock-diagonal-left-plants: 518180721
+      rock-diagonal-right: 885058728
+      rock-diagonal-right-plants: 1251562768
+      solid: -631661639
+      top-layer_0: 1007335403
+      top-layer_1: -1720707100
+      top-layer_2: -1472322122
+      top-layer_3: 1703407973
+      top-layer_4: -947353763
+      top-layer_5: 458761661
+      top-layer_6: -1743447260
+      top-layer_7: -756734255
+      top-layer_8: -143997558
       top-layer_9: 1682546328
       wall-pattern: 961988495
-      bridge: -38013908
-      left-rock-bridge: -1436200859
-      bridge-log: -2119691025
-      top-layer_8: -143997558
-      right-edge: 343665818
-      left: 48717042
-      top-layer_4: -947353763
-  spritePackingTag: 
+      wall-pattern-big: -449134481
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

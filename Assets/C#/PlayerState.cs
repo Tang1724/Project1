@@ -13,6 +13,7 @@ public class PlayerState : MonoBehaviour
         Fly
     }
 
+
     public State currentState = State.Full;
     private SpriteRenderer spriteRenderer;
     private PlayerMoveControl playerMoveControl;
@@ -54,7 +55,7 @@ public class PlayerState : MonoBehaviour
             Debug.LogError("[PlayerState] Missing PlayerMoveControl component!");
         }
 
-        UpdateStateProperties();
+        // UpdateStateProperties();
     }
     private void Update()
     {
@@ -89,7 +90,7 @@ public class PlayerState : MonoBehaviour
             currentState = newState;
             OnStateChange?.Invoke();
             Debug.Log($"[PlayerState] State changed to: {currentState}");
-            UpdateStateProperties();
+            // UpdateStateProperties();
             if (newState == State.Empty)
             {
                 lastEmptyTime = Time.time; // 记录转换到EMPTY的时间
@@ -105,19 +106,19 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    private void UpdateStateProperties()
-    {
-        UpdateColor();
-        // Since mass, speed, and force properties are computed, no need to call update methods
-    }
+    // private void UpdateStateProperties()
+    // {
+    //     UpdateColor();
+    //     // Since mass, speed, and force properties are computed, no need to call update methods
+    // }
 
-    private void UpdateColor()
-    {
-        spriteRenderer.color = currentState == State.Full ? Color.blue :
-                               currentState == State.Empty ? Color.white:
-                               currentState == State.Fly ? Color.red:
-                               Color.black;
-    }
+    // private void UpdateColor()
+    // {
+    //     spriteRenderer.color = currentState == State.Full ? Color.blue :
+    //                            currentState == State.Empty ? Color.white:
+    //                            currentState == State.Fly ? Color.red:
+    //                            Color.black;
+    // }
 
     public  void CreateIceBlock(){
         Vector3 forwardDirection = transform.localScale.x > 0 ? transform.right : -transform.right;
@@ -187,4 +188,5 @@ public class PlayerState : MonoBehaviour
         yield return new WaitForSeconds(delay);
         ChangeState(newState);
     }
+
 }

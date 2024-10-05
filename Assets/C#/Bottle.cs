@@ -234,8 +234,8 @@ public class Bottle : MonoBehaviour
     
     public void UpdateColor()
     {
-        spriteRenderer.color = state == BottleState.Full ? Color.green :
-                                state == BottleState.Empty ? Color.white :
+        spriteRenderer.color = state == BottleState.Full ? Color.white :
+                                state == BottleState.Empty ? Color.gray :
                                                             Color.yellow;
     }
 

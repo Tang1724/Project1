@@ -25,6 +25,8 @@ public class PlayerMoveControl : MonoBehaviour
     public bool isJump;
     bool jumpPressed;
     public bool StartFly = false;
+    public bool death = false;
+    public bool Door1 = false;
 
     // // Start is called before the first frame update
     void Start()
@@ -39,7 +41,23 @@ public class PlayerMoveControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          if (Input.GetKeyDown(KeyCode.Alpha1))
+        if(death){{
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+        rb.isKinematic = true;
+        }
+        
+            return;}
+
+        if(Door1){{
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+        rb.isKinematic = true;
+        }
+        
+            return;}
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             LoadPreviousLevel();
         }
@@ -99,16 +117,53 @@ public class PlayerMoveControl : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Trap")
+        if (collider.gameObject.CompareTag("Trap"))
         {
-            string sceneName = SceneManager.GetActiveScene().name;
-            // 重载当前场景
-            SceneManager.LoadScene(sceneName);
+            death = true;
+            StartCoroutine(ReloadCurrentSceneAfterDelay(1f));
         }
+
+        if (collider.gameObject.CompareTag("End"))
+        {
+            Door1 = true;
+            StartCoroutine(LoadNextLevelAfterDelay(1f));
+        }
+    }
+
+
+        IEnumerator LoadNextLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 等待指定的延迟时间
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        
+        // 确保关卡索引不超过已存在的场景数
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex); // 加载下一关卡
+        }
+        else
+        {
+            Debug.Log("No more levels!"); // 如果没有更多关卡，输出提示
+        }
+    }
+
+    
+
+    IEnumerator ReloadCurrentSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 等待指定的延迟时间
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName); // 重载当前场景
     }
 
     private void FixedUpdate()
     {
+        if (death)
+            return;
+        if (Door1)
+            return;
         GroundMovement();
         Jumps();
     }
