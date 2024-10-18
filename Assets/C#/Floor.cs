@@ -62,7 +62,7 @@ void CheckPosition(Collision2D collision)
         foreach (ContactPoint2D contact in collision.contacts)
         {
             // 计算平台的顶部
-            float platformTop = transform.position.y + (transform.localScale.y * 0.5f);
+            float platformTop = transform.position.y + (transform.localScale.y * 0.15f);
             // 计算平台的左右边界
             float platformLeft = transform.position.x - (transform.localScale.x * 0.47f);
             float platformRight = transform.position.x + (transform.localScale.x * 0.47f);
@@ -161,7 +161,7 @@ void CheckPosition(Collision2D collision)
     void OnDrawGizmos()
     {
         // 设置 Gizmos 的颜色为半透明的蓝色
-        Gizmos.color = new Color(0, 0, 1, 0.5f);
+        Gizmos.color = Color.green;
 
         // 计算平台的顶部和左右边界
         float platformTop = transform.position.y + (transform.localScale.y * 0.5f);
@@ -172,6 +172,6 @@ void CheckPosition(Collision2D collision)
         float width = platformRight - platformLeft;
         
         // 绘制顶部的碰撞区域
-        Gizmos.DrawCube(new Vector3(transform.position.x, platformTop, 0), new Vector3(width, 0.1f, 1));
+        Gizmos.DrawLine(new Vector3(platformLeft, platformTop, 0), new Vector3(platformRight, platformTop, 0));
     }
 }

@@ -58,7 +58,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -111,6 +111,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5946032553919948331}
     m_Modifications:
+    - target: {fileID: 300155475086464651, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 300155475086464651, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d0cdb27fd2aa6b49b3073f4aa9ff61b, type: 3}
+    - target: {fileID: 300155475086464651, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 300155475086464651, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 300155475086464651, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283547858866251756, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800980145650175031, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800980145650175031, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d0cdb27fd2aa6b49b3073f4aa9ff61b, type: 3}
     - target: {fileID: 2374793113959231673, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.755676
@@ -151,6 +183,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5181795286543888633, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181795286543888633, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d0cdb27fd2aa6b49b3073f4aa9ff61b, type: 3}
+    - target: {fileID: 7387840324624779791, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067693445228916423, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067693445228916423, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d0cdb27fd2aa6b49b3073f4aa9ff61b, type: 3}
     - target: {fileID: 8507976721835004097, guid: a9b1c14afa9f9b243acdc06519463d4f, type: 3}
       propertyPath: m_Name
       value: Menu
@@ -173,6 +225,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5946032553919948331}
     m_Modifications:
+    - target: {fileID: 4418269252385772199, guid: 4bbaa9df0d235b84c9f1c0c864895aa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7011420157836936872, guid: 4bbaa9df0d235b84c9f1c0c864895aa5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -256,6 +312,10 @@ PrefabInstance:
     - target: {fileID: 7866662973610923806, guid: 4bbaa9df0d235b84c9f1c0c864895aa5, type: 3}
       propertyPath: m_Name
       value: Text (Legacy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866662973610923806, guid: 4bbaa9df0d235b84c9f1c0c864895aa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -39,9 +39,6 @@ EditorBuildSettings:
     path: Assets/Chapter one/Test1.10.unity
     guid: 7a453b09f62678345a5963ff8222d3f8
   - enabled: 1
-    path: Assets/Chapter one/Test1.11.unity
-    guid: 5942687d26607ae45a02d4cb1a29a9a1
-  - enabled: 1
     path: Assets/Chapter two/Test2.1.unity
     guid: 97c604dbdc2b3f94191329456cee8aac
   - enabled: 1
@@ -61,13 +58,7 @@ EditorBuildSettings:
     guid: 45be70af0a3f0884b87968b1c1b5061f
   - enabled: 1
     path: Assets/Chapter two/Test2.7.unity
-    guid: fff71a6cfed48164bb2ac2e28026679d
-  - enabled: 1
-    path: Assets/Chapter two/Test2.8.unity
     guid: 4feb89492121d4a47aea20afd37a9b98
-  - enabled: 1
-    path: Assets/Chapter two/Test2.9.unity
-    guid: 9cbd5e510ace9424ca141ef29c673ff0
   - enabled: 1
     path: Assets/Chapter three/Test3.1.unity
     guid: 02811de6636b5ba4c9d6db57c88d321a
@@ -83,7 +74,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Chapter three/Test3.5.unity
     guid: 1ff77d7ad962b4340b306284f42448ae
-  - enabled: 1
-    path: Assets/Chapter three/Test3.6.unity
-    guid: 24439ad68e7d031438a6f72900f6973b
   m_configObjects: {}

@@ -59,24 +59,6 @@ public class PlayerState : MonoBehaviour
     }
     private void Update()
     {
-        if (isWithinWater && Time.time > lastEmptyTime + cooldown)
-        {
-            if (currentState == State.Empty)
-            {
-                ChangeState(State.Full); // 冷却时间后自动恢复到FULL状态
-            }
-        }
-
-        if (isWithinWater && Time.time > lastFlyTime + flydown)
-        {
-            if (currentState == State.Fly)
-            {
-                ChangeState(State.Full); // 冷却时间后自动恢复到FULL状态
-                playerMoveControl.StartFly = false;
-            }
-        }
-
-
         if (Input.GetKeyDown(KeyCode.E) && currentState == State.Full && isWithinWater)
         {
             ChangeState(State.Empty);
@@ -106,20 +88,6 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    // private void UpdateStateProperties()
-    // {
-    //     UpdateColor();
-    //     // Since mass, speed, and force properties are computed, no need to call update methods
-    // }
-
-    // private void UpdateColor()
-    // {
-    //     spriteRenderer.color = currentState == State.Full ? Color.blue :
-    //                            currentState == State.Empty ? Color.white:
-    //                            currentState == State.Fly ? Color.red:
-    //                            Color.black;
-    // }
-
     public  void CreateIceBlock(){
         Vector3 forwardDirection = transform.localScale.x > 0 ? transform.right : -transform.right;
 
@@ -136,6 +104,7 @@ public class PlayerState : MonoBehaviour
                 Debug.Log("[PlayerState] Touched water. Attempting to change state to Full.");
                 ChangeState(State.Full);
                 playerMoveControl.StartFly = false;
+
             }
             
             if (collider.gameObject.tag == "Purified water"){
@@ -146,8 +115,8 @@ public class PlayerState : MonoBehaviour
             if(collider.gameObject.tag == "Empty"){
                 Debug.Log("[PlayerState] Touched water. Attempting to change state to Full.");
                 ChangeState(State.Empty);
-
                 playerMoveControl.StartFly = false;
+                AudioManager.instance.PlaySound("Pushsound");
             }
 
             if(collider.gameObject.tag == "Cold"){
@@ -157,17 +126,20 @@ public class PlayerState : MonoBehaviour
 
             if (collider.gameObject.tag == "water1")
             {
-            isWithinWater = true; // 进入水区
-            if (currentState == State.Empty && Time.time >= lastEmptyTime + cooldown)
+                isWithinWater = true; // 进入水区
+                if (currentState == State.Empty && Time.time >= lastEmptyTime + cooldown)
+                {
+                    ChangeState(State.Full); 
+                }
+
+            if (currentState == State.Fly)
             {
-                ChangeState(State.Full); 
+                if (playerMoveControl.StartFly == true)
+                {
+                    StartCoroutine(ExecuteAfterDelay());
+                }
             }
-            else if ( currentState == State.Fly && Time.time >= lastFlyTime + flydown)
-            {
-                ChangeState(State.Full); 
-                playerMoveControl.StartFly = false;
             }
-        }
         }  
     
 
@@ -187,6 +159,13 @@ public class PlayerState : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         ChangeState(newState);
+    }
+
+    IEnumerator ExecuteAfterDelay()
+    {
+        yield return new WaitForSeconds(1.5f); // 等待两秒
+        ChangeState(State.Full); // 延迟两秒后执行的内容
+        playerMoveControl.StartFly = false;
     }
 
 }

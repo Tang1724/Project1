@@ -27,6 +27,8 @@ public class PlayerMoveControl : MonoBehaviour
     public bool StartFly = false;
     public bool death = false;
     public bool Door1 = false;
+  
+
 
     // // Start is called before the first frame update
     void Start()
@@ -87,6 +89,7 @@ public class PlayerMoveControl : MonoBehaviour
         if (playerState.currentState == PlayerState.State.Full || playerState.currentState == PlayerState.State.Fly)
         {
             playerState.ChangeState(PlayerState.State.Empty);
+            AudioManager.instance.PlaySound("Pushsound");
         }
         StartFly = false;
     }
@@ -115,6 +118,30 @@ public class PlayerMoveControl : MonoBehaviour
         
     }
 
+
+    void OnTriggerEnter2D(Collider2D collider){
+        if (collider.gameObject.CompareTag("End"))
+        {
+            AudioManager.instance.PlaySound("Firesound");
+        }
+
+        if (collider.gameObject.CompareTag("Trap"))
+        {
+            AudioManager.instance.PlaySound("Deadsound");
+        }
+
+        if (collider.gameObject.tag == "Water")
+        {
+
+            AudioManager.instance.PlaySound("Watersound");
+        }
+            
+        if (collider.gameObject.tag == "Purified water")
+        {
+            AudioManager.instance.PlaySound("Watersound");
+        }
+    }
+
     void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Trap"))
@@ -127,6 +154,7 @@ public class PlayerMoveControl : MonoBehaviour
         {
             Door1 = true;
             StartCoroutine(LoadNextLevelAfterDelay(1f));
+  
         }
     }
 
@@ -207,6 +235,7 @@ public class PlayerMoveControl : MonoBehaviour
         }
         // 无论是否跳跃成功，都重置跳跃按键状态
         jumpPressed = false;
+        AudioManager.instance.PlaySound("jumpsound");
     }
 
         isGrounded = IsOnGround();

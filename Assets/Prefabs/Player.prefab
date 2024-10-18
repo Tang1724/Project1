@@ -207,6 +207,8 @@ MonoBehaviour:
   isGrounded: 1
   isJump: 0
   StartFly: 0
+  death: 0
+  Door1: 0
 --- !u!95 &4368633486215598225
 Animator:
   serializedVersion: 5
