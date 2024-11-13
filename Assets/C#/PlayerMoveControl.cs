@@ -27,8 +27,6 @@ public class PlayerMoveControl : MonoBehaviour
     public bool StartFly = false;
     public bool death = false;
     public bool Door1 = false;
-  
-
 
     // // Start is called before the first frame update
     void Start()
@@ -106,6 +104,7 @@ public class PlayerMoveControl : MonoBehaviour
         {
             if(Input.GetButtonDown("Jump")){
                 StartFly = true;
+
             }
          }
 
@@ -209,23 +208,6 @@ public class PlayerMoveControl : MonoBehaviour
     }
 
     void Jumps(){
-        // if (isGrounded)
-        // {
-        //     jumpCount = 1;
-        //     isJump = false;
-        // }
-        // if(jumpPressed && isGrounded){
-        //     isJump = true;
-        //     rb.velocity = new Vector2(rb.velocity.x, playerState.Jumpforce);
-        //     jumpCount--;
-        //     jumpPressed = false;
-        // }
-        // else if(jumpPressed && jumpCount > 0 && isJump)
-        // {
-        //     rb.velocity = new Vector2(rb.velocity.x, playerState.Jumpforce);
-        //     jumpCount--;
-        //     jumpPressed = false;
-        // }
         if (jumpPressed)
     {
         if (isGrounded || (jumpCount > 0 && isJump))

@@ -62,7 +62,7 @@ void CheckPosition(Collision2D collision)
         foreach (ContactPoint2D contact in collision.contacts)
         {
             // 计算平台的顶部
-            float platformTop = transform.position.y + (transform.localScale.y * 0.15f);
+            float platformTop = transform.position.y + (transform.localScale.y * 0.13f);
             // 计算平台的左右边界
             float platformLeft = transform.position.x - (transform.localScale.x * 0.47f);
             float platformRight = transform.position.x + (transform.localScale.x * 0.47f);
@@ -164,7 +164,7 @@ void CheckPosition(Collision2D collision)
         Gizmos.color = Color.green;
 
         // 计算平台的顶部和左右边界
-        float platformTop = transform.position.y + (transform.localScale.y * 0.5f);
+        float platformTop = transform.position.y + (transform.localScale.y * 0.13f);
         float platformLeft = transform.position.x - (transform.localScale.x * 0.49f);
         float platformRight = transform.position.x + (transform.localScale.x * 0.49f);
 

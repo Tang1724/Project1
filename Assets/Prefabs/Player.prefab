@@ -199,11 +199,11 @@ MonoBehaviour:
   jumpFullForce: 11.5
   jumpEmptyForce: 18.5
   FlyForce: 5
-  colliderOffset: {x: -0.4, y: 0.5, z: 0}
+  colliderOffset: {x: -0.4, y: 0.45, z: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundLength: 0.1
+  groundLength: 0.3
   isGrounded: 1
   isJump: 0
   StartFly: 0

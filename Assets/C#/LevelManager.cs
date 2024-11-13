@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-   public Text levelText;  // 如果你使用的是普通的UI Text
-    // public TextMeshProUGUI levelText; // 如果你使用的是TextMeshPro
-
+   public Text levelText;
     void Start()
     {
         UpdateLevelUI();

@@ -63,6 +63,13 @@ public class PlayerState : MonoBehaviour
         {
             ChangeState(State.Empty);
         }
+
+        if (isWithinWater == true){
+            if (currentState == State.Empty && Time.time >= lastEmptyTime + cooldown)
+            {
+                ChangeState(State.Full); 
+            }
+        }
     }
 
     public void ChangeState(State newState)
@@ -163,7 +170,7 @@ public class PlayerState : MonoBehaviour
 
     IEnumerator ExecuteAfterDelay()
     {
-        yield return new WaitForSeconds(1.5f); // 等待两秒
+        yield return new WaitForSeconds(1.5f); // 等待两秒 n 
         ChangeState(State.Full); // 延迟两秒后执行的内容
         playerMoveControl.StartFly = false;
     }

@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Chapter one/Test1.1.unity
     guid: 45496cef04da789429b0f8acdab1bbd9
   - enabled: 1
-    path: Assets/Chapter one/Test1.2.unity
-    guid: 8af4d29f73ff7984cb96526e98461acf
-  - enabled: 1
     path: Assets/Chapter one/Test1.3.unity
     guid: c89134b6644b513419af8d54c66cd873
   - enabled: 1
