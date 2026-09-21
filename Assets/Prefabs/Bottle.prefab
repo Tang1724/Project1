@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 993908252116574910}
   - component: {fileID: 4971190665908335725}
   - component: {fileID: 6143818454043017743}
+  - component: {fileID: 6003805751209321020}
   m_Layer: 6
   m_Name: Bottle
   m_TagString: Bottle
@@ -192,12 +193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76792322f533357479faf5f50872e013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottleTigger: {fileID: 984089871937909307}
-  PlayerinBottle: 0
   state: 0
+  PlayerinBottle: 0
   playerState: {fileID: 3881220940226717217, guid: 816d2b37581761143b093d7c7e8f6751, type: 3}
   BottleFlyForce: 5
-  totalMass: 0
   BottleEmpty: {fileID: 6200000, guid: 713d10a035bb795438e8f0ce50f0c08b, type: 2}
   BottleFull: {fileID: 6200000, guid: 4606cf56ae8fb294887946c699ee100f, type: 2}
 --- !u!50 &4971190665908335725
@@ -248,6 +247,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6003805751209321020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465563296929573864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a68f5f2d7b92646bdfb573d35126eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3895561902116400709
 GameObject:
   m_ObjectHideFlags: 0
